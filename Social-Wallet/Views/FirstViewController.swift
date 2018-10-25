@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FirstViewController.swift
 //  Social-Wallet
 //
 //  Created by Robert Chung on 10/9/18.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
-
+class FirstViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

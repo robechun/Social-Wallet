@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,8 +18,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                self.window?.rootViewController = MainTabBarController.instantiate()
+            } else {
+                print("User not logged in; performing login flow")
+            }
+        }
         
+        
+        // TODO: get this from a database(?) so that this isn't in plaintext.
+        TWTRTwitter.sharedInstance().start(withConsumerKey:"hRoeC24sbIzy3e2VjUtw177vG", consumerSecret:"5fSi0HmUlJnvJ9xfTnssFcP8I5CN7mNRpV65Na0sV8KUukxv2p")
+
         return true
+    }
+    
+    // Additional application function to allow TWTRTwitter. Saves the authentication token on disk.
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
