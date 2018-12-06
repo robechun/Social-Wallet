@@ -8,6 +8,7 @@
 
 import UIKit
 
+/** The main tab controller for both connecting accounts and looking up accounts to connect to. */
 class MainTabBarController: UITabBarController {
     
     class func instantiate() -> MainTabBarController {

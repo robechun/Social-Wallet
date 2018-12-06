@@ -8,6 +8,7 @@
 
 import UIKit
 
+/** Delegate to perform segues to either register or login screens. */
 class StartViewController: UIViewController {
     
     // Properties

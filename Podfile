@@ -9,7 +9,13 @@ target 'Social-Wallet' do
   pod 'LGButton'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'TwitterKit'
+  pod 'KeychainAccess'
+  pod 'PopupDialog', '~> 0.9'
+  pod "PinterestSDK", :git => "https://github.com/pinterest/ios-pdk.git"
+
 
   target 'Social-WalletTests' do
     inherit! :search_paths

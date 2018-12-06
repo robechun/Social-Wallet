@@ -10,6 +10,7 @@ import UIKit
 import SkyFloatingLabelTextField
 import FirebaseAuth
 
+/** The View Controller that is responsible for Logging in the user. Uses Firebase as the authenticator */
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!

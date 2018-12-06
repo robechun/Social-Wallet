@@ -2,17 +2,32 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>pinit</key>
+            <dict>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                <false/>
+            </dict>
+        </dict>
+    </dict>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>pdk4996738078337948410</string>
 				<string>twitterkit-hRoeC24sbIzy3e2VjUtw177vG</string>
 			</array>
 		</dict>
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>pinterestsdk.v1</string>
 		<string>twitter</string>
 		<string>twitterauth</string>
 	</array>

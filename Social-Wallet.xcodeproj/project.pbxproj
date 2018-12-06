@@ -15,9 +15,9 @@
 		F46B3967217CEE08000964C4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46B3964217CEE08000964C4 /* RegisterViewController.swift */; };
 		F46B3969217EEEA5000964C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46B3968217EEEA5000964C4 /* Assets.xcassets */; };
 		F46B396B217EEFB9000964C4 /* ConnectAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46B396A217EEFB9000964C4 /* ConnectAccountsViewController.swift */; };
+		F46B396D218277A0000964C4 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46B396C218277A0000964C4 /* MainTabBarController.swift */; };
+		F46B396F21840B20000964C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46B396E21840B20000964C4 /* MainViewController.swift */; };
 		F492E2FC216DB9D4006A91AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492E2FB216DB9D4006A91AE /* AppDelegate.swift */; };
-		F492E2FE216DB9D4006A91AE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492E2FD216DB9D4006A91AE /* FirstViewController.swift */; };
-		F492E300216DB9D4006A91AE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492E2FF216DB9D4006A91AE /* SecondViewController.swift */; };
 		F492E303216DB9D4006A91AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F492E301216DB9D4006A91AE /* Main.storyboard */; };
 		F492E308216DB9D4006A91AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F492E306216DB9D4006A91AE /* LaunchScreen.storyboard */; };
 		F492E313216DB9D4006A91AE /* Social_WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492E312216DB9D4006A91AE /* Social_WalletTests.swift */; };
@@ -57,10 +57,10 @@
 		F46B3964217CEE08000964C4 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F46B3968217EEEA5000964C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F46B396A217EEFB9000964C4 /* ConnectAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectAccountsViewController.swift; sourceTree = "<group>"; };
+		F46B396C218277A0000964C4 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		F46B396E21840B20000964C4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F492E2F8216DB9D4006A91AE /* Social-Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social-Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F492E2FB216DB9D4006A91AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F492E2FD216DB9D4006A91AE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		F492E2FF216DB9D4006A91AE /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		F492E302216DB9D4006A91AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F492E307216DB9D4006A91AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F492E309216DB9D4006A91AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,6 +131,8 @@
 				F46B3964217CEE08000964C4 /* RegisterViewController.swift */,
 				F46B3963217CEE08000964C4 /* StartViewController.swift */,
 				F46B396A217EEFB9000964C4 /* ConnectAccountsViewController.swift */,
+				F46B396C218277A0000964C4 /* MainTabBarController.swift */,
+				F46B396E21840B20000964C4 /* MainViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,8 +164,6 @@
 			children = (
 				F46B3961217CED8E000964C4 /* Views */,
 				F492E2FB216DB9D4006A91AE /* AppDelegate.swift */,
-				F492E2FD216DB9D4006A91AE /* FirstViewController.swift */,
-				F492E2FF216DB9D4006A91AE /* SecondViewController.swift */,
 				F46B395D21787EE7000964C4 /* GoogleService-Info.plist */,
 				F46B3968217EEEA5000964C4 /* Assets.xcassets */,
 				F492E301216DB9D4006A91AE /* Main.storyboard */,
@@ -337,9 +337,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Social-Wallet/Pods-Social-Wallet-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -386,18 +389,36 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Social-Wallet/Pods-Social-Wallet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/LGButton/LGButton.framework",
+				"${BUILT_PRODUCTS_DIR}/PinterestSDK/PinterestSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
+				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinterestSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,13 +514,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F492E300216DB9D4006A91AE /* SecondViewController.swift in Sources */,
 				F492E2FC216DB9D4006A91AE /* AppDelegate.swift in Sources */,
 				F46B3967217CEE08000964C4 /* RegisterViewController.swift in Sources */,
-				F492E2FE216DB9D4006A91AE /* FirstViewController.swift in Sources */,
+				F46B396D218277A0000964C4 /* MainTabBarController.swift in Sources */,
 				F46B396B217EEFB9000964C4 /* ConnectAccountsViewController.swift in Sources */,
 				F46B3965217CEE08000964C4 /* LoginViewController.swift in Sources */,
 				F46B3966217CEE08000964C4 /* StartViewController.swift in Sources */,
+				F46B396F21840B20000964C4 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,7 +692,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "altrum.Social-Wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -686,7 +707,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "altrum.Social-Wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

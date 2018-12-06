@@ -9,33 +9,40 @@
 import UIKit
 import Firebase
 import TwitterKit
+import PinterestSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Pinterest SDK
+        PDKClient.configureSharedInstance(withAppId: "4996738078337948410")
+        
+        
+        // Firebase SDK
         FirebaseApp.configure()
+        
         Auth.auth().addStateDidChangeListener { (auth, user) in
-            if user != nil {
+            if user != nil { 
                 self.window?.rootViewController = MainTabBarController.instantiate()
             } else {
                 print("User not logged in; performing login flow")
             }
         }
         
-        
+        // Twitter SDK
         // TODO: get this from a database(?) so that this isn't in plaintext.
         TWTRTwitter.sharedInstance().start(withConsumerKey:"hRoeC24sbIzy3e2VjUtw177vG", consumerSecret:"5fSi0HmUlJnvJ9xfTnssFcP8I5CN7mNRpV65Na0sV8KUukxv2p")
 
         return true
     }
     
-    // Additional application function to allow TWTRTwitter. Saves the authentication token on disk.
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+    // Callback URL for Pinterest or Twitter.
+    // TODO: Don't really understand what this does.
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return PDKClient.sharedInstance().handleCallbackURL(url) || TWTRTwitter.sharedInstance().application(app, open: url, options: options)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
