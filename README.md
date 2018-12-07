@@ -9,7 +9,7 @@ The current supported platforms are:
 - Pinterest
 
 ## Running the Application
-To run the application, clone this repository and open the workspace file. Run the simulator by pressing Cmd-R.
+To run the application, clone this repository and open the workspace file. Run the simulator by pressing Cmd-R. If Pods are not installed (dependencies), run `pod install` at the top level directory including the Podfile.
 
 You MUST have Swift 4.2 enabled and installed.
 
